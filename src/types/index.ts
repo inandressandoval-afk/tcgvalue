@@ -19,6 +19,18 @@ export interface PokemonCard {
   nationalPokedexNumbers: number[]
   legalities: Record<string, string>
   tcgplayer?: TCGPlayerData
+  cardmarket?: {
+    url?: string
+    updatedAt?: string
+    prices?: {
+      averageSellPrice?: number
+      lowPrice?: number
+      trendPrice?: number
+      avg1?: number
+      avg7?: number
+      avg30?: number
+    }
+  }
 }
 
 export interface CardSet {
