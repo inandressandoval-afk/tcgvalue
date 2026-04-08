@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design tokens ──────────────────────────────────────────────────────────── */
+:root {
+  --color-gold: #C9A84C;
+  --color-gold-light: #F0D080;
+  --color-rare: #7B61FF;
+  --color-holo: #00D4FF;
+  --color-surface: #F5F3EE;
+  --color-ink: #0D0D0D;
+  --color-ink-muted: #5A5A6E;
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body), system-ui, sans-serif;
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  min-height: 100vh;
+}
+
+/* ─── Typographie ────────────────────────────────────────────────────────────── */
+h1, h2, h3, .font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+/* ─── Animations ─────────────────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.35s ease forwards;
+}
+
+/* ─── Skeleton loader ────────────────────────────────────────────────────────── */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #e8e6e1 25%,
+    #f0ede8 50%,
+    #e8e6e1 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s linear infinite;
+  border-radius: 6px;
+}
+
+/* ─── Carte Pokémon ──────────────────────────────────────────────────────────── */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-3px) scale(1.015);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+}
+
+/* ─── Badge rareté ───────────────────────────────────────────────────────────── */
+.rarity-common    { background: #E8E6E1; color: #5A5A6E; }
+.rarity-uncommon  { background: #D4E8D4; color: #2A5A2A; }
+.rarity-rare      { background: #D4D8F5; color: #2A2A8A; }
+.rarity-ultra     { background: linear-gradient(135deg, #C9A84C22, #7B61FF22); color: #5A3A8A; border: 1px solid #C9A84C55; }
+.rarity-secret    { background: linear-gradient(135deg, #00D4FF22, #7B61FF22); color: #005A8A; border: 1px solid #00D4FF55; }
+.rarity-special   { background: linear-gradient(135deg, #FFD70022, #FF6B0022); color: #8A4A00; border: 1px solid #FFD70055; }
+
+/* ─── Prix tag ───────────────────────────────────────────────────────────────── */
+.price-tag {
+  font-family: var(--font-mono), monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── Mock badge ─────────────────────────────────────────────────────────────── */
+.mock-badge {
+  font-size: 0.65rem;
+  background: #FEF3C7;
+  color: #92400E;
+  border: 1px solid #FCD34D;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: var(--font-mono), monospace;
+}
+
+/* ─── Scrollbar fine ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #C4C2BC; border-radius: 3px; }

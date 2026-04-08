@@ -1,0 +1,6 @@
+{
+  "/api/events/route": "app/api/events/route.js",
+  "/api/game/cards/route": "app/api/game/cards/route.js",
+  "/play/page": "app/play/page.js",
+  "/page": "app/page.js"
+}
