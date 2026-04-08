@@ -150,7 +150,7 @@ export async function getCardPrices(
             ebay: card.prices?.ebay,
             cardmarket: card.prices?.cardmarket,
             graded: card.graded,
-            community: null,
+            community: undefined,
             isMocked: false,
           }
         }
