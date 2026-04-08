@@ -108,7 +108,7 @@ export function getPricesFromCard(card: {
           },
         }
       : undefined,
-    community,
+    community: community ?? undefined,
     isMocked,
   }
 }
